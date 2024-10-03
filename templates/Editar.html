@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../static/estilo.css">
+    <title>{{ Titulo }}</title>
+</head>
+<body>
+<div class="viagens-card">
+     <div class="page-header">
+          <h1>{{ Titulo }}</h1>
+      </div>
+      <form action="/alterar" method="post">
+          <fieldset>
+              <div class="form-group">
+                  <label for ='ID-Viagens'>ID: </label>
+                  <input type="hidden" name="ID-Viagens" id="ID-Viagens"  value="{{ Viagens.idviagens }}" required>
+              </div>
+               <div class="form-group">
+                  <label for="Nome">Nome do Destino: </label>
+                  <input type="text" name="Nome" id="Nome" value="{{ Viagens.nomedestino }}" required>
+              </div>
+              <div class="form-group">
+                  <label for="Pais">País: </label>
+                  <input type="text" name="Pais" id="Pais" value="{{ Viagens.pais }}" required>
+              </div>
+              <div class="form-group">
+                  <label for="Atracao">Tipo de Atração: </label>
+                  <select name="Atracao" id="Atracao"  required>
+                      <option value="" selected>Selecione uma opção: </option>
+                      <option value="Praia">Praia</option>
+                      <option value="Montanha">Montanha</option>
+                      <option value="Urbano">Urbano</option>
+                      <option value="Historico">Histórico</option>
+                      <option value="Natural">Natural</option>
+                  </select>
+              </div>
+              <div class="form-group">
+                  <label for ='CustoMedio'>Custo Médio (Real): </label>
+                  <input type="number" name="CustoMedio" id="CustoMedio" value="{{ Viagens.customedio }}" required>
+              </div>
+              <div class="form-group">
+                  <label for="Classificacao">Classificação de Segurança (em uma escala de 1 a 5): </label>
+                  <select name="Classificacao" id="Classificacao" required>
+                      <option value="" selected>Selecione uma opção: </option>
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                  </select>
+              </div>
+              <button type="submit" class="botao3">Enviar</button>
+              <button type="reset" class="botao4">Resetar</button>
+
+          </fieldset>
+      </form>
+</div>
+
+
+</body>
+</html>

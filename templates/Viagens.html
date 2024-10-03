@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="static/estilo.css">
+    <title>{{ Titulo }}</title>
+</head>
+<body>
+    <div>
+        <h1>{{ Titulo }}</h1>
+    </div>
+    {% for Viagens in ListaViagens %}
+        <div class="viagens-card">
+            <h2>Nome:{{ Viagens.nomedestino }}</h2>
+            <p>País: {{ Viagens.pais }}</p>
+            <p>Tipo de Atração: {{ Viagens.atracao }}</p>
+            <p>Custo Médio: {{ Viagens.customedio}}</p>
+            <p>Classificação de Segurança: {{ Viagens.classificacao}}</p>
+            <br>
+        <a href="excluir/{{Viagens.idviagens}}">Excluir</a>
+        <a href="editar/{{Viagens.idviagens}}">Editar</a>
+
+
+        </div>
+    {%endfor%}
+
+</body>
+</html>
